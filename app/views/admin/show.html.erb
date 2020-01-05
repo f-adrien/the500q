@@ -1,0 +1,7 @@
+<h1>Admin</h1>
+<%= form_tag admin_import_path, multipart: true do %>
+
+<%= file_field_tag :file, accept: 'csv', class: '' %>
+
+<%= submit_tag "Import Questions", class: 'btn btn-info' %>
+<% end %>
