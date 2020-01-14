@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="questions-container">
+<div class="question-content">
+  <%= @question.content %>
+</div>
+</div>
+<div class="next-question-button">
+<%= link_to "Next question !", load_question_url, class: "", remote: true %>
+</div>
+
+<% content_for(:js) do %>
+<script>
+
+  $(document).ready(function(){
+    $(function(){
+      $.ajax({
+        type:'GET',
+        url:"<%= load_question_url %>",
+        success: function(){
+        }
+      });
+    });
+  });
+
+</script>
+<% end %>
+
+

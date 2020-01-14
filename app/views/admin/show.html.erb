@@ -1,7 +1,15 @@
-<h1>Admin</h1>
+<h1 style="margin-bottom: 32px;">Admin Dashboard</h1>
+
+<div style="margin-bottom: 32px;">
+
 <%= form_tag admin_import_path, multipart: true do %>
 
-<%= file_field_tag :file, accept: 'csv', class: '' %>
+  <%= file_field_tag :file, accept: 'csv', class: '' %>
+</div>
 
 <%= submit_tag "Import Questions", class: 'btn btn-info' %>
 <% end %>
+
+<div style="margin-top: 32px;">
+  <p><%= "nombre total de questions: #{@questions.size}" %></p>
+</div>
